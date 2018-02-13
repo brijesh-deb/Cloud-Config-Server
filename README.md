@@ -6,6 +6,7 @@ Use a config server like Spring Cloud Config Server with Git integration
 
 ### Server
 #### Code rundown
+- Generate a Spring Boot project using Spring Initializr; with Config Server as Selected Dependencies
 - Add Config Server annotation in Spring Application class: ***@EnableConfigServer***
 - Create a local folder "config-server-repo". 
 - Place 3 properties files in this folder: client-server-client.properties, client-server-client-dev.properties, client-server-client-prod.properties
@@ -24,5 +25,13 @@ Use a config server like Spring Cloud Config Server with Git integration
   - Change config-server-client-dev.properties and config-server-client-prod.properties files
   - Commit the files in git repo
   - Now again run hit the end-points, changes will get reflected (without server restart)
-
-
+### Client
+#### Code rundown
+- Generate a Spring Boot project using Spring Initializr; with Config Client as Selected Dependencies
+- bootstrap.properties in resources folder has config client settings
+- ConfigServerClientApplication.java file accesses properties mentioned in Config Server
+#### Run and test
+- mvn clean install
+- Run the application
+- Test
+  - http://localhost:8080/msg
