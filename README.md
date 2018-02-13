@@ -3,7 +3,9 @@
 How to externalize configuration properties, have environment (dev,qa, prod) specific configurations and update properties at runtime without service redeployment.
 ### Solution
 Use a config server like Spring Cloud Config Server with Git integration
-### Code rundown
+
+### Server
+#### Code rundown
 - Add Config Server annotation in Spring Application class: ***@EnableConfigServer***
 - Create a local folder "config-server-repo". 
 - Place 3 properties files in this folder: client-server-client.properties, client-server-client-dev.properties, client-server-client-prod.properties
@@ -12,7 +14,7 @@ Use a config server like Spring Cloud Config Server with Git integration
 - Commit the files by running command ***git commit -m "Initial commit"***
 - bootstrap.properties in resources folder has config server settings
 
-### Run and test
+#### Run and test
 - mvn clean install
 - Run the application
 - Test configurations for different environments with following end-points
